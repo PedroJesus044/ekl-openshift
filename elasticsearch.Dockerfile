@@ -1,4 +1,4 @@
-FROM ubi9/ubi
+FROM ubi8/ubi
 
 USER 0
 RUN yum install java-1.8.0-openjdk -y
