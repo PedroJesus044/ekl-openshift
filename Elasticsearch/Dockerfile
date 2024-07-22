@@ -9,4 +9,4 @@ RUN apt install -y elasticsearch
 ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 EXPOSE 9200
 USER elasticsearch
-CMD ["/usr/share/elasticsearch/bin","elasticsearch"]
+CMD ["/usr/share/elasticsearch/bin/elasticsearch","start"]
