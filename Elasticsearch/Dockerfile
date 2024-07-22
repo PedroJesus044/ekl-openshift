@@ -7,8 +7,10 @@ RUN echo "deb [signed-by=/usr/share/keyrings/elastic.gpg] https://artifacts.elas
 RUN apt update
 RUN apt install -y elasticsearch
 ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
-RUN chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
-RUN chmod +x /usr/share/elasticsearch/bin/elasticsearch
+
+RUN chgrp -R 0 /etc/default/elasticsearch && chmod -R g=u /etc/default/elasticsearch
+RUN chgrp -R 0 /usr/share/elasticsearch/bin/elasticsearch && chmod -R g=u /usr/share/elasticsearch/bin/elasticsearch
+
 EXPOSE 9200
 USER elasticsearch
 CMD ["/usr/share/elasticsearch/bin/elasticsearch","start"]
