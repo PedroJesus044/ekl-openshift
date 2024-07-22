@@ -10,3 +10,4 @@ ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 EXPOSE 9200
 USER elasticsearch
 CMD ["/usr/share/elasticsearch/bin/elasticsearch","start"]
+RUN curl -X GET "localhost:9200"
