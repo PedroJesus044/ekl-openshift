@@ -8,4 +8,4 @@ RUN apt update
 RUN apt install -y elasticsearch
 ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 USER elasticsearch
-CMD ["sleep","inf"]
+CMD ["/usr/share/elasticsearch/bin","elasticsearch"]
