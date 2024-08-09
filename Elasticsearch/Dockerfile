@@ -13,7 +13,7 @@ RUN chgrp -R 0 /usr/share/elasticsearch/bin/elasticsearch && chmod -R g=u /usr/s
 
 EXPOSE 9200
 USER elasticsearch
-CMD ["sleep","inf"]
-#CMD ["/usr/share/elasticsearch/bin/elasticsearch","start"]
+#CMD ["sleep","inf"]
+CMD ["/usr/share/elasticsearch/bin/elasticsearch","start"]
 #/usr/share/elasticsearch/bin/elasticsearch start
 #RUN curl -X GET "localhost:9200"
